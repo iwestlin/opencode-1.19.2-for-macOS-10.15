@@ -103,3 +103,16 @@ clang++ -dynamiclib -o shim.dylib shim.cpp \
 codesign --force --sign - shim.dylib
 ```
 
+## License
+
+MIT. This project is an unofficial patched build and is not affiliated with or
+endorsed by opencode. The bundled `opencode.bin` derives from the MIT-licensed
+opencode project; see `LICENSE` and `NOTICE`.
+
+## Credits
+
+The porting work in this repository (binary patching, the compatibility shim,
+the SQLite build, and the accompanying scripts) was done by
+[opencode](https://opencode.ai) — the AI coding agent — using the
+`opencode/deepseek-v4.1-flash-free` model.
+

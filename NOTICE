@@ -1,0 +1,17 @@
+# Third-Party Notices
+
+This project redistributes and patches the official opencode binary.
+
+## opencode
+
+- Source: https://github.com/anomalyco/opencode
+- Copyright (c) 2025 opencode
+- License: MIT
+
+The bundled `opencode.bin` is a modified build of the official opencode
+v1.19.2 `darwin-x64` release. Modifications are limited to lowering the Mach-O
+minimum OS version, redirecting ICU/libSystem/opentui dependencies to the
+bundled compatibility shim, and are described in detail in `README.md` and
+performed by `patch.py`.
+
+The full MIT license text is reproduced in `LICENSE`.
