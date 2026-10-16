@@ -1,0 +1,12 @@
+#!/bin/sh
+# Launcher for the opencode CLI on macOS 10.15 (Catalina).
+#
+# The bundled Bun runtime dlopen()s "libsqlite3.dylib"; the 10.15 system copy
+# (SQLite 3.28) is too old for the RETURNING syntax opencode uses. Point the
+# dynamic loader at the newer SQLite shipped in this directory. The same
+# directory also holds shim.dylib, loaded via @executable_path by the patched
+# binary to supply macOS 11+/newer-ICU symbols.
+DIR="$(cd "$(dirname "$0")" && pwd)"
+DYLD_LIBRARY_PATH="$DIR${DYLD_LIBRARY_PATH:+:$DYLD_LIBRARY_PATH}"
+export DYLD_LIBRARY_PATH
+exec "$DIR/opencode.bin" "$@"
